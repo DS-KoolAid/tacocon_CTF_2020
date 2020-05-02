@@ -4,7 +4,3 @@ services:
         build: .
         ports:
          - "8000:80"
-    web2:
-        build: .
-        ports:
-         - "8080:80"
