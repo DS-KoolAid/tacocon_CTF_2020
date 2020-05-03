@@ -1,0 +1,19 @@
+version: '3'
+services:
+    web_xxe:
+        build: xxe_server/
+        container_name: web_server
+        ports:
+         - "8123:80"
+        networks:
+            - backend 
+
+    web_metadata:
+        build: metadata_server/
+        container_name: secret_server
+        networks:
+            - backend
+
+networks:
+    backend:
+        driver: bridge

