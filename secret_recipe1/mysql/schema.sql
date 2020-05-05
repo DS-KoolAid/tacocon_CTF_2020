@@ -12,7 +12,7 @@ DELIMITER //
 CREATE PROCEDURE init_contents_proc()
   LANGUAGE SQL
   BEGIN
-    INSERT INTO login_storage VALUES ('admin','FFXisvALLmqDNxyMdwek44yYfziZHQFZdx',"Hello Admin! Here is the secret recipe: Tacocon{}");
+    INSERT INTO login_storage VALUES ('admin','FFXisvALLmqDNxyMdwek44yYfziZHQFZdx',"Hello Admin! Here is the secret recipe: Tacocon{SprinkleALittleSQLInjectionOnTop19831}");
   END //
 
 CREATE EVENT cronjob

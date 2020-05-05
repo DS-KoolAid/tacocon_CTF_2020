@@ -1,6 +1,6 @@
 version: '3'
 services:
-    mysql:
+    mysql-sr:
         build: ./mysql
         container_name: mysql-server
         command: --default-authentication-plugin=mysql_native_password --sql_mode=""
@@ -15,7 +15,7 @@ services:
         ports:
             - "8234:80"
         depends_on:
-            - mysql
+            - mysql-sr
         networks:
             - backend
 

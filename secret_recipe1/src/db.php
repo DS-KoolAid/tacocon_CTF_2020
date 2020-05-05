@@ -4,7 +4,7 @@
 CREATE TABLE login_storage (
   name char(64),
   secret char(64),
-  message varchar(250)
+  message varchar(512)
 );
 INSERT INTO products VALUES('admin'...);
 */

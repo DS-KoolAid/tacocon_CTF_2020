@@ -63,9 +63,9 @@
                                                 }
                                                 else {
                                                     echo <<< HERE
-                                                    <form action="/view.php" method="POST">
+                                                    <form action="/index.php" method="POST">
                                                     Name: <input type="text" name="name" /><br />
-                                                    Secret: <input type="password" name="password" /><br />
+                                                    Password: <input type="password" name="password" /><br />
                                                     <input type="submit" value="Login" />
                                                     </form>
                                                     HERE;
@@ -83,9 +83,9 @@
 
                                             elseif ($_SERVER['REQUEST_METHOD']==="GET"){
                                                 echo <<< HERE
-                                                <form action="/view.php" method="POST">
+                                                <form action="/index.php" method="POST">
                                                 Name: <input type="text" name="name" /><br />
-                                                Secret: <input type="password" name="password" /><br />
+                                                Password: <input type="password" name="password" /><br />
                                                 <input type="submit" value="Login" />
                                                 </form>
                                                 HERE;

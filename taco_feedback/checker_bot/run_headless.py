@@ -7,7 +7,7 @@ driver = webdriver.Remote("http://127.0.0.1:4444/wd/hub", DesiredCapabilities.CH
 
 driver.add_cookie(cookies)
 
-driver.get("http://02f45c77.ngrok.io/sol.html")
+driver.get("http://comment_server/view_comments.php")
 
 sleep(5)
 html = driver.execute_script("return document.getElementsByTagName('html')[0].innerHTML")

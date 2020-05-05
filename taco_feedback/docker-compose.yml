@@ -1,10 +1,10 @@
 version: '3'
 services:
-    # checker_bot:
-    #     build: ./checker_bot
-    #     container_name: checker_bot
-    #     networks:
-    #         - backend 
+    checker_bot:
+        build: ./checker_bot
+        container_name: checker_bot
+        networks:
+            - backend 
     comment_server:
         build: ./comment_server
         container_name: comment_server
