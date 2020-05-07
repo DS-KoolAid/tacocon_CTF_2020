@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 
-int main(int argc, char **argv)
-{
-
-    int correct_input_xor[26] = {
+bool check_input(char* input) {
+   int correct_input_xor[26] = {
         0x03, 0x5f, 0x40, 0x0a, 0x00
     };
 
@@ -19,14 +18,23 @@ int main(int argc, char **argv)
         correct_input[i] = c;
     }
     correct_input[26] = '\0';
+    if (strcmp(correct_input, input) == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
+int main(int argc, char **argv)
+{
     printf("------------------------\n");
     printf("< ");
     if (argc == 1) {
         printf("What does the taco say? ");
     }
     else if (argc == 2) {
-        if (strcmp(correct_input, argv[1]) == 0) {
+        if (check_input(argv[1])) {
             int flag_xor[42] = {
                 0x3a, 0x08, 0x00, 0x0a, 0x3c, 0x1b, 0x1c, 0x02, 0x0d, 0x57,
                 0x13, 0x06, 0x1d, 0x1e, 0x15, 0x2c, 0x02, 0x0e, 0x07, 0x09,
@@ -50,13 +58,13 @@ int main(int argc, char **argv)
             }
 
             flag[42] = '\0';
-            printf("They go %s - %s ", correct_input, flag);
+            printf("It says %s - %s ", argv[1], flag);
         }
         else if (strcmp("Ring-ding-ding-ding-dingeringeding!", argv[1]) == 0) {
             printf("https://www.youtube.com/watch?v=jofNR_WkoCE ");
         }
         else {
-            printf("%s ", argv[1]);
+            printf("It does not say %s ", argv[1]);
         }
     }
     else {    
