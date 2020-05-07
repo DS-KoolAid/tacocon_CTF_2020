@@ -1,0 +1,9 @@
+version: '3'
+services:
+    network_101:
+        build: .
+        ports:
+         - "6543:6543"
+        environment:
+         - L_IP=0.0.0.0
+         - L_PORT=6543
