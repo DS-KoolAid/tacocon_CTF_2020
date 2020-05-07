@@ -4,4 +4,7 @@ Create the binary from the C file
 
 ## Solution
 Intent is for user to find the correct input to return the flag.
-You will need to step throug the binary using a debugger like gdb and determine what it is doing.
+
+There are two solutions.
+1. Step through via a debugger like gdb. You are looking for a strcmp function. Checkout the `.gdb_history` file for the instructions to run
+2. Reveal all the library calls the binary makes using `ltrace`. This reveals the call made to strcmp
