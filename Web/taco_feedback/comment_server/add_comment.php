@@ -43,7 +43,7 @@
                                             </div>
                                         </div>
                                         <div class="col col2">
-                                            <h3>Comments have been added. The chief thanks you for your feedback!</h3>
+                                            <h3>Comments have been added. The chef thanks you for your feedback!</h3>
 
                                         </div>
                                         
