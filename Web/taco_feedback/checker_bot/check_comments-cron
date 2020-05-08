@@ -1,1 +1,1 @@
-* * * * * /usr/bin/timeout -s 2 50 python3 /home/seluser/run_headless.py 
+* * * * * /usr/bin/timeout -s 2 70 /usr/bin/python3 /home/seluser/run_headless.py 

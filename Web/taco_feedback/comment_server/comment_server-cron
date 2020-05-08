@@ -1,1 +1,1 @@
-*/2 * * * * cp /var/www/comments-gold.html /var/www/comments.html
+*/5 * * * * /bin/cp /var/www/comments-gold.html /var/www/comments.html >/var/log/crontest.log 2>&1 
