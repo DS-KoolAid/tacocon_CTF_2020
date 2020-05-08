@@ -14,8 +14,5 @@ RUN chmod 777 /var/www/html/assets/*
 RUN apt update && apt install -y cron;
 RUN crontab /etc/cron.d/comment_server-cron
 CMD service cron start && apache2-foreground
-# RUN (crontab -l -u root; echo "*/2 * * * * cp /var/www/comments-gold.html /var/www/comments.html") | crontab
-# RUN crontab /etc/cron.d/comment_server-cron
-# RUN cron
 
 
