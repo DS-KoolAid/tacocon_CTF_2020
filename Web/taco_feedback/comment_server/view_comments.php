@@ -14,6 +14,7 @@ if(isset($_COOKIE['admin_id']) && $_COOKIE['admin_id'] == "kCxpAJacgNoGZPEPsgcdA
       $out_string.= "<h5>&emsp;&emsp;&emsp;Anonymous says:<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;".base64_decode($entry)."</h5><br>";
     }
   }
+  // $out_string=urldecode($out_string);
   echo <<< HERE
   <html>
   <head>

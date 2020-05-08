@@ -2,7 +2,10 @@
  
     if ($_SERVER['REQUEST_METHOD']==="POST" && isset($_POST['comment'])){
 
-        $input = base64_encode(htmlspecialchars($_POST['comment']));
+
+
+        $input = base64_encode($_POST['comment']);
+
 
         $fp = fopen('../comments.html', 'a');//opens file in append mode  
         fwrite($fp, "\n".$input);   
