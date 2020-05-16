@@ -1,0 +1,3 @@
+vi -Z welcome_to_tacocon.txt
+echo 'Tacocon{Over_2_Million_People_Have_Gotten_Trapped_In_Vi}'
+exit
