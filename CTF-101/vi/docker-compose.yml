@@ -1,0 +1,6 @@
+version: '3'
+services:
+    vi:
+        build: .
+        ports:
+         - "22:2222"
