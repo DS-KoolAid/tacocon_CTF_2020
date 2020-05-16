@@ -3,4 +3,4 @@ services:
     vi:
         build: .
         ports:
-         - "22:2222"
+         - "2222:22"
