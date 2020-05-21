@@ -1,0 +1,6 @@
+Seed Time:		 1589675269.2449
+Infection ID:		 zpfRAIq2WrjAgXiq
+Seed Time:		 1589675269.2459
+Key:			 ngSt3Tf5BEiQxK7NtqeHVIQnV07y0RRG
+File Written:		 flag_zpfRAIq2WrjAgXiq.taco
+File Written:		 important_image_zpfRAIq2WrjAgXiq.taco
