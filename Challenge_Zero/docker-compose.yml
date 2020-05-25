@@ -1,0 +1,6 @@
+version: '3'
+services:
+    challenge_zero:
+        build: .
+        ports:
+         - "6789:80"
