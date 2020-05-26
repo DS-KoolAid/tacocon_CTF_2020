@@ -1,0 +1,51 @@
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.6/typed.min.js"></script>
+<script src="locator.js"></script>
+<style>
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+body {
+  background: #000;
+
+  }
+
+  p{
+  color: lime; 
+  font-family: "Courier";
+  font-size: 12px;
+  /* margin: 10px 0 0 10px; */
+  white-space: nowrap;
+  overflow: hidden;
+  width: 200em;
+  white-space: pre-wrap;
+}
+</style>
+<body>
+<p> 
+    <span class="element"></span>
+</p>
+    
+
+</body>
