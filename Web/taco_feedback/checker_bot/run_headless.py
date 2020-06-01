@@ -4,7 +4,7 @@ from time import sleep
 
 sleep(20)
 
-driver = webdriver.Remote("http://127.0.0.1:4444/wd/hub", DesiredCapabilities.CHROME)
+driver = webdriver.Remote("http://127.0.0.1:4444/wd/hub", DesiredCapabilities.FIREFOX)
 
 
 driver.get("http://comment_server")
