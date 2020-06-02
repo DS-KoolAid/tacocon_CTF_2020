@@ -115,7 +115,7 @@ else{
 										<form action="/answer.php" method="get" id="form1">
 										<input type="radio" id="YES" name="doyoulovetacos" value="YES">
 										<label for="YES">YES</label><br>
-										<input type="radio" id="NO" name="doyoulocetacos" value="NO">
+										<input type="radio" id="NO" name="doyoulovetacos" value="NO">
 										<label for="NO">NO</label><br>
 										</form> 
 										<button type="submit" form="form1" value="Submit">Submit</button>
