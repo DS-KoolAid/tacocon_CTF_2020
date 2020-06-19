@@ -1,4 +1,5 @@
 # Challenge_Zero
+250 points
 
 ## Setup
 1. `docker-compose up -d --build`

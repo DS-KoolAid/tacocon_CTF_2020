@@ -44,21 +44,25 @@ Save the new file and open it:
 
 ## Forensics 300 - tacosay
 You are given a binary file. If you run it, you get an ASCII art taco saying `What does the taco say?`
+
 ![tacosay.png](images/tacosay.png)
 
 Running it with a command line argument results in the taco replying with `It does not say <argument-given>`
+
 ![tacosay-invalid.png](images/tacosay-invalid.png)
 
 So based on this information, we probably need to find the right input to give, in order to get the program to output the flag.
 
 First thing we can try is running strings on the binary to see if we find anything interesting inside the file.
 `strings tacosay`
+
 ![tacosay-strings.png](images/tacosay-strings.png)
 
 There's a couple interesting things - a string `Ring-ding-ding-ding-dingeringeding!` and a YouTube link `https://www.youtube.com/watch?v=jofNR_WkoCE`.
 
 Let's try giving the first string as an input.
 `./tacosay Ring-ding-ding-ding-dingeringeding!`
+
 ![tacosay-ring.png](images/tacosay-ring.png)
 
 That gives us the YouTube link. Going to that link reveals the video `Ylvis - The Fox (What Does The Fox Say?) [Official music video HD]` and this actually ends up being a dead-end. We added it as an Easter Egg :)
@@ -69,12 +73,15 @@ One way to dissamble the binary is to use the `objdump` command, specifically `o
 Looking at the dissambly, we can spot a few key parts.
 
 First off there is a `main` function which is likely where the entrypoint of this program, so let's take a closer look.
+
 ![tacosay-disas-main.png](images/tacosay-disas-main.png)
 
 Looking at the assembly code of `main`, we notice a call to the `check_input` function. This is likely where the check happens to see if the correct input was given. Let's take a closer look at the code of that function.
+
 ![tacosay-disas-check.png](images/tacosay-disas-check.png)
 
 We can see further down in the `check_input` function, a call made to `strcmp`, making use of the `eax` register . This is likely where the check takes place so we need to find a way to view the contents of the `eax` register as this check.
+
 ![tacosay-disas-strcmp.png](images/tacosay-disas-strcmp.png)
 
 There are two options. 
@@ -82,6 +89,7 @@ First one: there's a handy Linux command called `ltrace`. You can use to run ano
 `ltrace ./tacosay hi`
 
 And you can see that it does in fact pick up the `strcmp` call and the correct input is `m00o!`
+
 ![tacosay-ltrace.png](images/tacosay-ltrace.png)
 
 Alternatively, you can run this program with a debugger to step through as it runs and find the exact moment it does the check. Let's use `gdb` for this.
@@ -89,17 +97,21 @@ Alternatively, you can run this program with a debugger to step through as it ru
 Start the program in gdb `gdb tacosay`, and then let's set a breakpoint on the main function `b main`. Now run the program with an input `r hi`.
 
 Next, we should hit our breakpoint. Let's take a look at the disassembly again to see where we're at `disas` and we can see we're at the start of the main function and further below, we see a call to `check_input`. So let's set another breakpoint there, `b check_input` and then continue `c`
+
 ![tacosay-gdb-main.png](images/tacosay-gdb-main.png)
 
 Looking at the dissambley output again `disas`, we see further down the `strcmp` call happens at address `0x56556292`, so let's set another breakpoint at that address `b *0x56556292` and continue `c`.
+
 ![tacosay-gdb-strcmp.png](images/tacosay-gdb-strcmp.png)
 
 
 Now, we should check the value of the `eax` register to see what the correct input is `x/s $eax`, and we find the correct input to be `m00o!`
+
 ![tacosay-gdb-eax.png](images/tacosay-gdb-eax.png)
 
 
 Now that we have correct input, let's feed it to the program and get the flag! `Tacocon{R3verseEngineeringIsAllITacoAbout}`
+
 ![tacosay-flag.png](images/tacosay-flag.png)
 
 
