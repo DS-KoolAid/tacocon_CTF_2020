@@ -1,5 +1,18 @@
 # CTF 101 Solutions
 
+## Table of Contents
+
+  * [crypto-101](#crypto-101)
+  * [steg-101](#steg-101)
+  * [forensics-101](#forensics-101)
+  * [web-101](#web-101)
+  * [reverse-101](#reverse-101)
+  * [reverse-101](#reverse-101)
+  * [network-101](#reverse-101)
+  * [Hidden Tacos](#hidden-tacos)
+  * [Find the Taco!](#find-the-taco)
+  * [vi](#vi)
+
 ## crypto-101
 You are given the following string `VGFjb2NvbntUaGlzSXNUaGVGbGFnISF9Cg==`
 

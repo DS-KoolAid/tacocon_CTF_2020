@@ -1,5 +1,14 @@
 # Crypto Solutions
 
+## Table of Contents
+
+  * [Crypto 100 - Intercepted Message](#crypto-100---Intercepted-Message)
+  * [Crypto 200 - Binary Cipher Text???](crypto-200---binary-cipher-text)
+  * [Crypto 300 - TacosTacosTacos](#crypto-300---tacostacostacos)
+  * [Crypto 400 - SSH Keys](#crypto-400---ssh-keys)
+  * [Crypto 500 - File Recovery](#crypto-500---file-recovery)
+
+
 ## Crypto 100 - Intercepted Message
 
 This challenge is a ROT13 cipher, otherwise known as a ceasar cipher. 

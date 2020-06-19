@@ -1,5 +1,11 @@
 # Forensics Solutions
 
+## Table of Contents
+
+  * [Forensics 200 - Zombie Taco](#forensics-200---zombie-taco)
+  * [Forensics 300 - tacosay](#forensics-300---tacosay)
+  * [Forensics 500 - WannaTaco](#forensics-500---wannataco)
+
 ## Forensics 200 - Zombie Taco
 
 This challenge focuses on a forensic technique of **file carving**. 

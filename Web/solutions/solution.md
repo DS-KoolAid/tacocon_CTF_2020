@@ -2,7 +2,6 @@
 
 ## Table of Contents
 
-
   * [Web 100 - Sweet Tooth](#web-100---sweet-tooth)
   * [Web 200 - Secret Recipe 1](#web-200---secret-recipe-1)
   * [Web 300 - Serial Taco Eater](#web-300---serial-taco-eater)
