@@ -1,6 +1,9 @@
-# Challenge_Zero
+# Challenge_Zero Solution
+
+## Secret Message
 You are given a binary string. If you decode that using an online tool such as CyberChef, you back a url `http://challenges.tacocon.party:6789`
 
+## Redacted Text
 Navigating to the website, you find a bunch of text that is redacted with a Classified stamp on top
 ![c0-redacted.png](images/c0-redacted.png)
 
@@ -18,6 +21,7 @@ Your third option is to find a way to disable the redactions on the webpage. Fro
 
 ![cleartext.png](images/cleartext.png)
 
+## Decoding the Cipher
 Reading the un-redacted text now, you are given a strange message at the beginning of the paragraph `Follow this path to find its location : secret_files/5:10/1:4/4:23/1:131/3:85`
 
 The word **path** is emphasized, hinting that there is some potential web path you need to go to, but there appears to be some sort of code. If you check out the path `http://challenges.tacocon.party:6789/secret_files`, you find yourself looking at a directory listing with a bunch of single letter directories. Navigating into a folder leads to more single letter directories, and eventually you can reach the end of a path after 5 letters. So knowing this information, we're looking for some combination of letters that leads up to the right path.
@@ -30,6 +34,7 @@ So following this logic, you find the cipher decodes to `secret_files/s/a/l/s/a`
 
 There is another unintended way you could find this path without solving the cipher. You could write a script to go through each directory under secret_files until you find something interesting. In this case, we did ask people not to bruteforce anything to prevent overloading the server, but there actually aren't that many directories to check (only *228,488*), so it could have worked.
 
+## Bunker Locator
 Now looking at bunker_locator.html, we see some text being written to the screen. Once you wait for it finish, you are met with an ASCII art of a flaming taco and a message saying `Location Found! Stored agent message at /{location_name}.html|`
 
 ![bunker-locator.png](images/bunker-locator.png)
@@ -38,6 +43,7 @@ If you try that path as is, it doesn't work, so we need to figure out the locati
 
 ![bunker-js.png](images/bunker-js.png)
 
+## Finding the Location
 So those numbers are not a name but actually longitude, latitude coordinates. This is where we need to see what we can find from looking around on the Internet! Taking those coordinates and plugging them into Google Maps, you can find the following image, showing what locations are at these coordinates. There are a handful, but knowing that this is **Taco**Con, we can make a guess that the location we want is `Tacos Sinaloa`.
 
 ![tacos-sinaloa.png](images/tacos-sinaloa.png)

@@ -1,4 +1,4 @@
-# Solutions
+# CTF 101 Solutions
 
 ## crypto-101
 You are given the following string `VGFjb2NvbntUaGlzSXNUaGVGbGFnISF9Cg==`
